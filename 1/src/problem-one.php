@@ -37,4 +37,4 @@ foreach ($matrix as $m) {
     }
 }
 
-dd("Highest sum is: {$highestSum}");
+dd("Highest sum is: {$highestSum}"); // 67633

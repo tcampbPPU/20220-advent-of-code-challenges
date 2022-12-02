@@ -41,5 +41,5 @@ foreach ($matrix as $m) {
     }
 }
 
-dd("Highest sums are: " . implode(', ', $highestSums). ' The total is: ' . array_sum($highestSums));
+dd("Highest sums are: " . implode(', ', $highestSums). ' The total is: ' . array_sum($highestSums)); // 199628
 
