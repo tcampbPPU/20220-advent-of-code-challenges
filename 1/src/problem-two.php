@@ -2,15 +2,16 @@
 
 use Illuminate\Support\Facades\Http;
 
+// ! SETUP
 $problemUrl = 'https://adventofcode.com/2022/day/1/input';
 $sessionKey = $_ENV['SESSION_KEY'];
-
 $response = Http::withOptions(['verify' => false])
     ->withCookies(['session' => $sessionKey], 'adventofcode.com')
     ->withUserAgent('Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36')
     ->get($problemUrl);
-
 $input = $response->body();
+
+// * Solution 1 - Procedural
 
 $baseData = explode("\n", $input);
 
@@ -43,3 +44,13 @@ foreach ($matrix as $m) {
 
 dd("Highest sums are: " . implode(', ', $highestSums). ' The total is: ' . array_sum($highestSums)); // 199628
 
+
+// * Solution 2 - Functional collects
+$collectionMaxThreeSum = collect(explode("\n\n", $input))
+    ->map(fn($group) => collect(explode("\n", $group))
+    ->sum(fn ($val) => (int) $val))
+    ->sortDesc()
+    ->take(3)
+    ->sum();
+
+dd("Top 3 total is : {$collectionSum}"); // 199628

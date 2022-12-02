@@ -2,17 +2,17 @@
 
 use Illuminate\Support\Facades\Http;
 
+// ! SETUP
 $problemUrl = 'https://adventofcode.com/2022/day/1/input';
 $sessionKey = $_ENV['SESSION_KEY'];
-
 $response = Http::withOptions(['verify' => false])
     ->withCookies(['session' => $sessionKey], 'adventofcode.com')
     ->withUserAgent('Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36')
     ->get($problemUrl);
-
 $input = $response->body();
 
-// break up by new line character
+// * Solution 1 - Procedural
+
 $baseData = explode("\n", $input);
 
 $matrix = [];
@@ -38,3 +38,13 @@ foreach ($matrix as $m) {
 }
 
 dd("Highest sum is: {$highestSum}"); // 67633
+
+
+// * Solution 2 - Functional collects
+
+$collectionSum = collect(explode("\n\n", $input))
+    ->map(fn($group) => collect(explode("\n", $group))
+    ->sum(fn ($val) => (int) $val))
+    ->max();
+
+dd("Highest sum is: {$collectionSum}"); // 67633
