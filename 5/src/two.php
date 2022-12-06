@@ -24,7 +24,7 @@ collect($crateLines)->map(function ($crateLine) use (&$data) {
     }
 });
 
-collect(explode("\n", $moves))->map(function ($move, $i) use (&$data) {
+collect(explode("\n", $moves))->map(function ($move) use (&$data) {
     $instruction = explode(' ', $move);
     $amount = $instruction[1];
     $from = $instruction[3] - 1;
@@ -40,4 +40,4 @@ $output = '';
 foreach ($data as $crane) {
     $output .= array_pop($crane);
 }
-dd("The output is: {$output}");
+dd("The output is: {$output}"); // TPWCGNCCG
