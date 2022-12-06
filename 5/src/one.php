@@ -1,8 +1,6 @@
 <?php
 
-$input = file_get_contents(
-    '/home/tanner/code/tanner/2022-advent-of-code-challenges/5/src/input.txt'
-);
+$input = file_get_contents(dirname(__FILE__) . '/input.txt');
 
 $data = [];
 
