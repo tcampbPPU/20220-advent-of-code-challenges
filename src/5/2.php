@@ -3,7 +3,6 @@
 // Input
 $input = file_get_contents(dirname(__FILE__) . '/data/input.txt');
 
-
 // Solution
 $data = [];
 
