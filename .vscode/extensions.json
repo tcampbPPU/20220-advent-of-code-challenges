@@ -1,0 +1,13 @@
+{
+    "recommendations": [
+        "aaron-bond.better-comments",
+        "bmewburn.vscode-intelephense-client",
+        "donjayamanne.githistory",
+        "eamodio.gitlens",
+        "EditorConfig.EditorConfig",
+        "valeryanm.vscode-phpsab",
+        "SanderRonde.phpstan-vscode",
+        "valeryanm.vscode-phpsab",
+        "xdebug.php-debug"
+    ],
+}

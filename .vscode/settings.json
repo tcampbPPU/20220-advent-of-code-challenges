@@ -1,0 +1,13 @@
+{
+    "git.mergeEditor": false,
+    "editor.formatOnSave": true,
+    "[php]": {
+        "editor.defaultFormatter": "valeryanm.vscode-phpsab",
+        "editor.formatOnSave": true
+    },
+    "phpsab.snifferEnable": true,
+    "phpsab.executablePathCBF": "./bin/phpcbf",
+    "phpsab.executablePathCS": "./bin/phpcs",
+    "phpsab.snifferShowSources": true,
+    "phpsab.snifferMode": "onType",
+}
