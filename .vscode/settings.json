@@ -1,9 +1,14 @@
 {
     "git.mergeEditor": false,
-    "editor.formatOnSave": true,
-    "[php]": {
-        "editor.defaultFormatter": "valeryanm.vscode-phpsab",
-        "editor.formatOnSave": true
+    "editor.formatOnSave": false,
+    "emeraldwalk.runonsave": {
+        "commands": [
+          {
+            "match": "\\.php$",
+            "isAsync": true,
+            "cmd": "./vendor/bin/pint ${file}"
+          },
+        ]
     },
     "phpsab.snifferEnable": true,
     "phpsab.executablePathCBF": "./bin/phpcbf",
